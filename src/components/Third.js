@@ -21,17 +21,17 @@ function Third() {
       value: newItem,
     };
 
+    
+  
     setItems((oldList) => [...oldList, item]);
     setNewItem("");
   }
-
-  //delete function
 
   function deleteItem(id) {
     const newArray = items.filter((item) => item.id !== id);
     setItems(newArray);
   }
-//edit function
+
   function editItem(id, newText) {
 
     const currentItem = items.filter((item) => item.id === id);
