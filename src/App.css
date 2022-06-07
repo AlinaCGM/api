@@ -12,3 +12,11 @@
   background-color: rgb(229, 198, 221);
   padding: 2rem
 }
+.third {
+  background-color: rgb(198, 229, 209);
+  padding: 2rem
+}
+.child {
+  background-color: rgb(232, 226, 226);
+  color:rgb(69, 61, 61);
+}
