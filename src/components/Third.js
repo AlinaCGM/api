@@ -17,21 +17,21 @@ function Third() {
     }
 
     const item = {
-      id: Math.floor(Math.random() * 1000),
+      id: Date.now(),
       value: newItem,
     };
 
-    
     setItems((oldList) => [...oldList, item]);
     setNewItem("");
   }
 
-  
+  //delete function
+
   function deleteItem(id) {
     const newArray = items.filter((item) => item.id !== id);
     setItems(newArray);
   }
-
+//edit function
   function editItem(id, newText) {
 
     const currentItem = items.filter((item) => item.id === id);
@@ -46,6 +46,8 @@ function Third() {
     setShowEdit(-1);
   }
 
+ 
+
   return (
     <div className="app">
       <h1>My Todo List</h1>
@@ -59,10 +61,10 @@ function Third() {
       <button onClick={() => addItem()}>Add</button>
 
       <ul>
-        {items.map((item) => {
+        {items.map((item,id) => {
           return (
-            <div>
-              <li key={item.id} onClick={() => setShowEdit(item.id)}>
+            <div  key={id}>
+              <li onClick={() => setShowEdit(item.id)}>
                 {item.value}
                 <button
                   className="delete-button"
